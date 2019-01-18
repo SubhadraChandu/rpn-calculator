@@ -1,3 +1,10 @@
+/**
+ * RPN Calculator console application
+ * @author Subhadra Chandu
+ */
+
+
+
 package com.rpn.application;
 
 import com.rpn.calculator.Calculator;
@@ -7,8 +14,10 @@ import java.util.Scanner;
 
 import static com.rpn.utils.RPNUtils.printStack;
 
+
 public class CalculatorApplication {
 
+    //to keep tracking the position number of operator and operand
     private static int counter;
 
     public static void main(String[] args) throws RPNCalculatorException {

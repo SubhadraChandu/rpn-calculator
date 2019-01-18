@@ -19,11 +19,20 @@ public class MultiplicationOperator extends BinaryOperator {
         return instance;
     }
 
+    /**
+     * @return Operator Identifier. "*" in this case
+     */
     @Override
     public String getIdentifier() {
         return RPNConstants.MULTIPLICATION;
     }
 
+    /**
+     * Perform the multiplication operation on the given two operands
+     * @param firstOperand
+     * @param secondOperand
+     * @return BigDecimal Number
+     */
     @Override
     public BigDecimal calculate(BigDecimal firstOperand, BigDecimal secondOperand) {
         return firstOperand.multiply(secondOperand, MathContext.DECIMAL64);

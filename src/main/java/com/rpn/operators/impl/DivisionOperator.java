@@ -19,11 +19,20 @@ public class DivisionOperator extends BinaryOperator {
         return instance;
     }
 
+    /**
+     * @return Operator Identifier. "/" in this case
+     */
     @Override
     public String getIdentifier() {
         return RPNConstants.DIVISION;
     }
 
+    /**
+     * Perform the division operation on the given two operands
+     * @param firstOperand
+     * @param secondOperand
+     * @return BigDecimal Number
+     */
     @Override
     public BigDecimal calculate(BigDecimal firstOperand, BigDecimal secondOperand) {
         if (firstOperand.equals(BigDecimal.ZERO) && secondOperand.equals(BigDecimal.ZERO)) {

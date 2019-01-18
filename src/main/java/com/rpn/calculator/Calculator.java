@@ -29,6 +29,7 @@ public class Calculator {
         return instance;
     }
 
+    // A flag to check if there is any RPNInsufficientParamsException thrown. Check BinaryOperator.class for this
     public static void setCanPush(boolean canPush) {
         Calculator.canPush = canPush;
     }
@@ -37,6 +38,13 @@ public class Calculator {
         return stack;
     }
 
+
+    /**
+     * Check each token entered by the user
+     * @param token
+     * @param counter
+     * @throws RPNCalculatorException
+     */
     public void parseToken(String token, int counter) throws RPNCalculatorException {
         token = token.toLowerCase();
 
@@ -57,6 +65,12 @@ public class Calculator {
     }
 
 
+    /**
+     * Perform Number and Operator check
+     * @param token
+     * @param counter
+     * @throws RPNCalculatorException
+     */
     private void performOperation(String token, int counter) throws RPNCalculatorException {
         if (isRealNumber(token)) {
             if (canPush) {
@@ -73,11 +87,18 @@ public class Calculator {
     }
 
 
+    /**
+     * perform clear stack
+     */
     private void performClear() {
         stack.clear();
     }
 
 
+    /**
+     * Perform undo on the given stack.
+     * The undo operations has to be performed as given for different operators and operands.
+     */
     private void performUndo() {
         try {
             OperatorType operatorType = stack.peek().getOperatorType();

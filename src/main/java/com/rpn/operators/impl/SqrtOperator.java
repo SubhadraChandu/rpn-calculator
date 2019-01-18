@@ -19,11 +19,19 @@ public class SqrtOperator extends UnaryOperator {
         return instance;
     }
 
+    /**
+     * @return Operator Identifier. "sqrt" in this case
+     */
     @Override
     public String getIdentifier() {
         return RPNConstants.SQUAREROOT;
     }
 
+    /**
+     * Perform the square root operation on the given operand
+     * @param operand
+     * @return BigDecimal number
+     */
     @Override
     public BigDecimal calculate(BigDecimal operand) {
 

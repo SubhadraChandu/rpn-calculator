@@ -13,6 +13,15 @@ import java.util.EmptyStackException;
 
 public abstract class BinaryOperator implements Operator<Entity, BigDecimal> {
 
+    /**
+     * Call the required Operator for the calculation on two given operands,
+     * and update the stack accordingly
+     *
+     * Handles RPNInsufficientParamsException exception and will not allow any elements to be added on the stack further.
+     * @param stack
+     * @param counter
+     * @throws RPNCalculatorException
+     */
     @Override
     public void process(UndoRedoStack<Entity> stack, int counter) throws RPNCalculatorException {
         try {

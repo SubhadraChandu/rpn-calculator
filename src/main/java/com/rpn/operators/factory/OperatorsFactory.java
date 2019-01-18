@@ -4,6 +4,14 @@ import com.rpn.operators.Operator;
 import com.rpn.operators.impl.*;
 
 public class OperatorsFactory {
+
+
+    /**
+     * Factory class to fetch the operator instance for the given operator.
+     * If the operator is not listed in the below cases, An IllegalArgument Exception will be thrown which is later handled by the calling class.
+     *  @param symbol Token symbol
+     * @return Operator Instance
+     */
     public static Operator getOperator(String symbol) {
         switch (symbol) {
             case "+":

@@ -19,11 +19,20 @@ public class SubtractionOperator extends BinaryOperator {
         return instance;
     }
 
+    /**
+     * @return Operator Identifier. "-" in this case
+     */
     @Override
     public String getIdentifier() {
         return RPNConstants.SUBSTRACTION;
     }
 
+    /**
+     * Perform the subtraction operation on the given two operands
+     * @param firstOperand
+     * @param secondOperand
+     * @return BigDecimal Number
+     */
     @Override
     public BigDecimal calculate(BigDecimal firstOperand, BigDecimal secondOperand) {
         return firstOperand.subtract(secondOperand, MathContext.DECIMAL64);
