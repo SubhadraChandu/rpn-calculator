@@ -42,17 +42,9 @@ public class SqrtOperator extends UnaryOperator {
                 throw new ArithmeticException("Illegal Sqrt(x) for x < 0 : x =" + operand);
         }
 
-        MathContext mc = MathContext.DECIMAL64;
-        BigDecimal TWO = new BigDecimal(2);
 
-        BigDecimal x0 = new BigDecimal("0");
-        BigDecimal x1 = new BigDecimal(Math.sqrt(operand.doubleValue()));
-        while (!x0.equals(x1)) {
-            x0 = x1;
-            x1 = operand.divide(x0, mc);
-            x1 = x1.add(x0);
-            x1 = x1.divide(TWO, mc);
-        }
-        return x1.round(MathContext.DECIMAL64);
+        double sqrtDouble = Math.sqrt(operand.doubleValue());
+        BigDecimal sqrtBigDecimal = new BigDecimal(sqrtDouble);
+        return sqrtBigDecimal.round(MathContext.DECIMAL64);
     }
 }
